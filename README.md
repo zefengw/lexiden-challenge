@@ -1,4 +1,4 @@
-# LexiDen - Legal Document Assistant
+# Lexiden - Legal Document Assistant
 
 A conversational AI interface for generating legal documents using SSE streaming, LLM function calling, and prompt engineering.
 
