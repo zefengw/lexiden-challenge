@@ -1,0 +1,352 @@
+/* Document Preview Styles */
+
+.document-preview {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Empty State */
+.document-preview.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  max-width: 320px;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+.empty-state h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state > p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.empty-features {
+  text-align: left;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  color: var(--color-text);
+  font-size: 0.875rem;
+}
+
+.feature-icon {
+  color: var(--color-success);
+  font-weight: bold;
+}
+
+/* Preview Header */
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.doc-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.doc-icon {
+  font-size: 1.5rem;
+}
+
+.doc-info h2 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.doc-meta {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.preview-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.history-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.history-toggle:hover {
+  background: var(--color-surface);
+}
+
+.history-toggle.active {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+
+/* History Panel */
+.history-panel {
+  padding: 1rem 1.5rem;
+  background: #f8f7f4;
+  border-bottom: 1px solid var(--color-border);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.history-panel h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.history-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: var(--color-surface-elevated);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+}
+
+.history-badge {
+  padding: 0.2rem 0.5rem;
+  background: #e0e7ff;
+  color: #3730a3;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  height: fit-content;
+}
+
+.history-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-section {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.history-change {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.history-change .old-value {
+  text-decoration: line-through;
+  color: #dc2626;
+  background: var(--color-highlight-remove);
+  padding: 0.125rem 0.25rem;
+  border-radius: 2px;
+}
+
+.history-change .change-arrow {
+  color: var(--color-text-muted);
+}
+
+.history-change .new-value {
+  color: #059669;
+  background: var(--color-highlight-add);
+  padding: 0.125rem 0.25rem;
+  border-radius: 2px;
+}
+
+.history-reason {
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+/* Document Content */
+.document-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    rgba(0, 0, 0, 0.03) 27px,
+    rgba(0, 0, 0, 0.03) 28px
+  );
+}
+
+.document-section {
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.document-section.recently-edited {
+  background: var(--color-highlight);
+  padding: 0.5rem;
+  margin: -0.5rem;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.doc-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.section-content p {
+  margin-bottom: 0.5rem;
+  text-align: justify;
+}
+
+.clause {
+  text-align: justify;
+  font-style: italic;
+}
+
+/* Signatures Section */
+.signatures-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.signature-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.signature-block {
+  text-align: left;
+}
+
+.signature-line {
+  width: 100%;
+  height: 1px;
+  background: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.signer-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.signer-role {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.date-line {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Generating Animation */
+.document-generating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--color-text-muted);
+}
+
+.generating-animation {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.generating-animation span {
+  width: 10px;
+  height: 10px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: generatingPulse 1.4s ease-in-out infinite;
+}
+
+.generating-animation span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.generating-animation span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes generatingPulse {
+  0%, 80%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+

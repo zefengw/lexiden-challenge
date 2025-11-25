@@ -1,0 +1,217 @@
+/* 
+  LexiDen - Legal Document Assistant
+  Design System: Modern Legal Tech with warmth
+  
+  Color Palette:
+  - Primary: Deep Navy #1a1f36
+  - Accent: Warm Gold #c9a227
+  - Surface: Warm White #faf9f7
+  - Text: Charcoal #2d3748
+  - Success: Sage Green #48bb78
+  - Muted: Stone Gray #718096
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-primary: #1a1f36;
+  --color-primary-light: #2d3354;
+  --color-accent: #c9a227;
+  --color-accent-hover: #d4b23d;
+  --color-surface: #faf9f7;
+  --color-surface-elevated: #ffffff;
+  --color-text: #2d3748;
+  --color-text-muted: #718096;
+  --color-text-inverse: #ffffff;
+  --color-success: #48bb78;
+  --color-border: #e2e0dc;
+  --color-border-focus: #c9a227;
+  --color-highlight: #fef3c7;
+  --color-highlight-remove: #fed7d7;
+  --color-highlight-add: #c6f6d5;
+  
+  --font-display: 'Crimson Pro', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  --shadow-sm: 0 1px 2px rgba(26, 31, 54, 0.06);
+  --shadow-md: 0 4px 12px rgba(26, 31, 54, 0.08);
+  --shadow-lg: 0 8px 24px rgba(26, 31, 54, 0.12);
+  --shadow-glow: 0 0 24px rgba(201, 162, 39, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-surface);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  font-size: 1.75rem;
+  color: var(--color-accent);
+}
+
+.logo h1 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--color-primary-light);
+  margin-left: 0.5rem;
+}
+
+.new-chat-btn {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.new-chat-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* Main Layout */
+.app-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+}
+
+.chat-panel {
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+}
+
+.document-panel {
+  background: var(--color-surface-elevated);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .document-panel {
+    display: none;
+  }
+  
+  .tagline {
+    display: none;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
